@@ -1,8 +1,6 @@
 from model import build_model
-from PIL import Image
 import torchvision.transforms as transforms
 import torch
-import io
 import numpy as np
 
 

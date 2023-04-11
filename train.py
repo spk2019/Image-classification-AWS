@@ -1,28 +1,23 @@
-# import all libraries 
-
-
-import requests
+#import all libraries
 from pathlib import Path
+from PIL import Image
+import argparse
+
 import torch
 import torch.nn as nn
 import torch.optim as optim
 from torch.utils.data import DataLoader
-from torchvision import datasets,transforms
+from torchvision import datasets
 import torchvision.models as models
-from PIL import Image
 import torchvision.transforms as transforms
-import argparse
-import matplotlib.pyplot as plt
+
 from utils import SaveBestModel
 from utils import save_plots
 from model import build_model
+
+import matplotlib.pyplot as plt
 plt.style.use("ggplot")
 
-
-
-
-
-# construct the argument parser
 
 # construct the argument parser
 parser = argparse.ArgumentParser()
