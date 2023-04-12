@@ -3,7 +3,9 @@ from preprocessing import transform_image, predict_result
 import torch
 from PIL import Image
 
-app = Flask(__name__)
+application = Flask(__name__)
+
+
 
 
 @app.route('/')
@@ -36,4 +38,4 @@ def predict_image_file():
 
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0")
+    application.run(host="0.0.0.0")
