@@ -7,17 +7,17 @@ import torch
 
 def build_model(pretrained, num_classes):
 
-    resnet = models.resnet50(pretrained=pretrained)
+    inception = torchvision.models.inception_v3(pretrained=True)
 
     #freezing all hidden layers
-    for param in resnet.parameters():
+    for param in inception.parameters():
         param.requires_grad=False
 
     #Training the last fc layer
-    in_features =  resnet.fc.in_features
-    resnet.fc = nn.Linear(in_features,num_classes)
+    in_features = inception.fc.in_features
+    inception.fc = nn.Linear(in_features=in_features,out_features=2)
             
-    return resnet
+    return inception
 
 
 
