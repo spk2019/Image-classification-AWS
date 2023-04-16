@@ -7,7 +7,7 @@ import torch
 
 def build_model(pretrained, num_classes):
 
-    inception = torchvision.models.inception_v3(pretrained=True)
+    inception = models.inception_v3(pretrained=True)
 
     #freezing all hidden layers
     for param in inception.parameters():
